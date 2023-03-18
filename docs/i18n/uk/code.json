@@ -1,0 +1,233 @@
+{
+  "homePage.head.tagline": {
+    "message": "Стейт менеджер для React"
+  },
+  "homePage.head.start": {
+    "message": "Почати"
+  },
+  "homePage.minimal.title": {
+    "message": "Мінімалістичний та реактивний"
+  },
+  "homePage.minimal.text": {
+    "message": "Recoil працює та думає подібно React. Додайте його до свого додатка та отримайте швидкий та гнучкий загальний стан."
+  },
+  "homePage.flow.title": {
+    "message": "Графік потоку-даних"
+  },
+  "homePage.flow.text": {
+    "message": "Похідні дані та асинхронні запити обробляються за допомогою чистих функцій та ефективної системи підписки."
+  },
+  "homePage.cross.title": {
+    "message": "Спостереження між додатком"
+  },
+  "homePage.cross.text": {
+    "message": "Використовуй збереження, маршрутизацію, налагодження за часом або відкат, спостерігаючи за всіма змінами стану у вашій програмі, не порушуючи розділення коду."
+  },
+  "resourcePage.head.title": {
+    "message": "Зовнішні ресурси"
+  },
+  "resourcePage.learn.title": {
+    "message": "Навчатися використовувати Recoil"
+  },
+  "resourcePage.learn.course": {
+    "message": "створив безкоштовний відеокурс Recoil (англійською мовою), який допоможе вам перейти від налаштування до розширеного використання Recoil. Під час курсу ви дізнаєтесь, як повною мірою використовувати потужні API Recoil."
+  },
+  "resourcePage.learn.more": {
+    "message": "Дізнайтеся, як відновити дані в режимі очікування, як використовувати Recoil для усунення поширених вузьких місць React та багато іншого."
+  },
+  "resourcePage.learn.watch": {
+    "message": "Дивитися курс"
+  },
+  "theme.NotFound.title": {
+    "message": "Сторінку не знайдено",
+    "description": "The title of the 404 page"
+  },
+  "theme.NotFound.p1": {
+    "message": "Ми не знайшли те, що ви шукали :(",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Схоже ваше посилання неробоча або застаріла",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Закрити",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Пагінація блогу",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Нові записи",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Старі записи",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "Читати менше хвилини|{readingTime} хвилин на прочитання",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Теги :",
+    "description": "The label alongside a tag list"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Читати далі",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Пагінація статі",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Новіша стаття",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Старіша стаття",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Всі теги",
+    "description": "The title of the tag list page"
+  },
+  "theme.blog.post.plurals": {
+    "message": "Эдина стаття|{count} статей",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} позначені як « {tagName} »",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "Переглянути всі теги",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Скопіювати код",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Скопійовано",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Скопіювати",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Відкрити бічне меню",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Відкрити бічне меню",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Пагінація документів",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Попередній",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Далі",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.sidebar.responsiveCloseButtonLabel": {
+    "message": "Закрити бічне меню",
+    "description": "The ARIA label for close button of mobile doc sidebar"
+  },
+  "theme.docs.sidebar.responsiveOpenButtonLabel": {
+    "message": "Відкрити бічне меню",
+    "description": "The ARIA label for open button of mobile doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Закрити бічне меню",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Закрити бічне меню",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "Ця документація для наступної версії {versionLabel} {siteTitle}.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "Це документація для {siteTitle} {versionLabel}, яка більше не підтримується.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "Для отримання оновленої документації див {latestVersionLink} ({versionLabel}).",
+    "description": "The label userd to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "Остання версія",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "Змінити цю сторінку",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "Редагувати цю сторінку",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " останнє оновлення {date}",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " користувачем під ім'ям {user}",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "Останнє оновлення {atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Перейти до основного змісту",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "Знайдено документ|{count} документів",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "Результати пошуку за запитом « {query} »",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "Пошук в документації",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "Введіть свій запит",
+    "description": "The placeholder for search page input"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "Шукати",
+    "description": "The ARIA label for search page input"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "знайдено через Algolia",
+    "description": "The ARIA label for Algolia mention"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "Результатів не знайдено",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "Завантаження нових результатів...",
+    "description": "The paragraph for fetching new search results"
+  },
+  "theme.SearchBar.label": {
+    "message": "Шукати",
+    "description": "The ARIA label and placeholder for search button"
+  }
+}

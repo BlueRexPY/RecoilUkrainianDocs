@@ -1,0 +1,137 @@
+---
+title: Атоми
+---
+
+Атоми містять джерело істини для нашого стану додатоку. У нашому списку cправ джерелом істини буде масив об'єктів, кожен з яких представляє елемент завдання.
+
+Ми назвемо наш атом списку `todoListState`, створимо його за допомогою функції `atom()`:
+
+```javascript
+const todoListState = atom({
+  key: 'TodoList',
+  default: [],
+});
+```
+
+Ми присвоюємо нашому атому унікальний `key` та встановлюємо значення порожній масив у `default`. Щоб прочитати вміст цього атома, ми можемо використовувати хук `useRecoilValue()` у нашому компоненті `TodoList`:
+
+```jsx
+function TodoList() {
+  const todoList = useRecoilValue(todoListState);
+
+  return (
+    <>
+      {/* <TodoListStats /> */}
+      {/* <TodoListFilters /> */}
+      <TodoItemCreator />
+
+      {todoList.map((todoItem) => (
+        <TodoItem key={todoItem.id} item={todoItem} />
+      ))}
+    </>
+  );
+}
+```
+
+Закоментовані компоненти будуть реалізовані в наступних розділах.
+
+To create new todo items, we need to access a setter function that will update the contents of the `todoListState`. We can use the `useSetRecoilState()` hook to get a setter function in our `TodoItemCreator` component:
+
+Щоб створити нові задачi (елементи todo), нам потрібно отримати доступ до функції встановленя (setter), яка оновить вміст `todoListState`. Ми можемо використовувати хук `useSetRecoilState()`, щоб отримати функцію встановленя в нашому компоненті `TodoItemCreator`:
+
+```jsx
+function TodoItemCreator() {
+  const [inputValue, setInputValue] = useState('');
+  const setTodoList = useSetRecoilState(todoListState);
+
+  const addItem = () => {
+    setTodoList((oldTodoList) => [
+      ...oldTodoList,
+      {
+        id: getId(),
+        text: inputValue,
+        isComplete: false,
+      },
+    ]);
+    setInputValue('');
+  };
+
+  const onChange = ({target: {value}}) => {
+    setInputValue(value);
+  };
+
+  return (
+    <div>
+      <input type="text" value={inputValue} onChange={onChange} />
+      <button onClick={addItem}>Додати</button>
+    </div>
+  );
+}
+
+// утиліта для створення унікального ідентифікатора
+let id = 0;
+function getId() {
+  return id++;
+}
+```
+
+Зверніть увагу, що ми використовуємо форму **updater** функції setter, щоб ми могли створити новий список завдань на основі старого списку завдань.
+
+The `TodoItem` component will display the value of the todo item while allowing you to change its text and delete the item. We use `useRecoilState()` to read `todoListState` and to get a setter function that we use to update the item text, mark it as completed, and delete it:
+
+Компонент `TodoItem` відобразить значення елемента todo, дозволяючи змінити його текст та видалити елемент. Ми використовуємо `useRecoilState()` для читання `todoListState` та отримання функції встановленя, яку ми використовуємо для оновлення тексту елемента, позначення його як завершеного та видалення:
+
+```jsx
+function TodoItem({item}) {
+  const [todoList, setTodoList] = useRecoilState(todoListState);
+  const index = todoList.findIndex((listItem) => listItem === item);
+
+  const editItemText = ({target: {value}}) => {
+    const newList = replaceItemAtIndex(todoList, index, {
+      ...item,
+      text: value,
+    });
+
+    setTodoList(newList);
+  };
+
+  const toggleItemCompletion = () => {
+    const newList = replaceItemAtIndex(todoList, index, {
+      ...item,
+      isComplete: !item.isComplete,
+    });
+
+    setTodoList(newList);
+  };
+
+  const deleteItem = () => {
+    const newList = removeItemAtIndex(todoList, index);
+
+    setTodoList(newList);
+  };
+
+  return (
+    <div>
+      <input type="text" value={item.text} onChange={editItemText} />
+      <input
+        type="checkbox"
+        checked={item.isComplete}
+        onChange={toggleItemCompletion}
+      />
+      <button onClick={deleteItem}>X</button>
+    </div>
+  );
+}
+
+function replaceItemAtIndex(arr, index, newValue) {
+  return [...arr.slice(0, index), newValue, ...arr.slice(index + 1)];
+}
+
+function removeItemAtIndex(arr, index) {
+  return [...arr.slice(0, index), ...arr.slice(index + 1)];
+}
+```
+
+І разом з цим у нас є повністю функціональний список cправ! У наступному розділі ми побачимо, як ми можемо використовувати селектори, щоб перенести наш список на новий рівень.
+
+

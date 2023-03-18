@@ -1,0 +1,42 @@
+{
+  "version.label": {
+    "message": "Поточна версія",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.Introduction": {
+    "message": "Вступ",
+    "description": "The label for category Introduction in sidebar docs"
+  },
+  "sidebar.docs.category.Basic Tutorial": {
+    "message": "Базовий підручник",
+    "description": "The label for category Basic Tutorial in sidebar docs"
+  },
+  "sidebar.docs.category.Guides": {
+    "message": "Керівництво",
+    "description": "The label for category Guides in sidebar docs"
+  },
+  "sidebar.docs.category.API Reference": {
+    "message": "Посилання на API",
+    "description": "The label for category API Reference in sidebar docs"
+  },
+  "sidebar.docs.category.Core": {
+    "message": "Ключові поняття",
+    "description": "The label for category Core in sidebar docs"
+  },
+  "sidebar.docs.category.State": {
+    "message": "Стан",
+    "description": "The label for category State in sidebar docs"
+  },
+  "sidebar.docs.category.Snapshots": {
+    "message": "Снапшот",
+    "description": "The label for category Snapshots in sidebar docs"
+  },
+  "sidebar.docs.category.Misc": {
+    "message": "інше",
+    "description": "The label for category Misc in sidebar docs"
+  },
+  "sidebar.docs.category.Utils": {
+    "message": "Утилітм",
+    "description": "The label for category Utils in sidebar docs"
+  }
+}

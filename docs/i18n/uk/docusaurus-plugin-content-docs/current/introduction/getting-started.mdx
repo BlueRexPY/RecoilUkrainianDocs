@@ -1,0 +1,137 @@
+---
+title: Почати використовувати
+---
+
+## Create React App
+
+Recoil est une bibliothèque de gestion d'état pour React, vous devez donc avoir installé React pour utiliser Recoil. Le moyen le plus simple et recommandé pour démarrer une application React est d'utiliser [Create React App](https://github.com/facebook/create-react-app#creating-an-app):
+
+Recoil-це бібліотека управління станом для React, тому для використання Recoil вам потрібно встановити та запустити React. Найпростіший і рекомендований спосіб завантаження реального додатка - використовувати [Create React App](https://github.com/facebook/create-react-app#creating-an-app):
+
+```shell
+npx create-react-app my-app
+```
+
+> [`npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) це панель запуску пакетів, яка постачається з npm 5.2+ і вище, дивіться [інструкції щодо старих версій npm](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f).
+
+або інші способи установки Create React App дивіться в [офіційній документації](https://github.com/facebook/create-react-app#creating-an-app).
+
+## Установка
+
+Recoil знаходиться в <a href="https://www.npmjs.com/get-npm" target="_blank">npm</a>. Щоб встановити останню стабільну версію, виконайте таку команду:
+```shell
+npm install recoil
+```
+
+Або якщо ви використовуєте <a href="https://classic.yarnpkg.com/en/docs/install/" target="_blank">yarn</a>:
+
+```shell
+yarn add recoil
+```
+
+Або якщо ви використовуєте <a href="https://classic.yarnpkg.com/en/docs/install/" target="_blank">bower</a>:
+
+```shell
+bower install --save recoil
+```
+
+## RecoilRoot
+
+Компоненти, що використовують стан recoil, вимагають, щоб `RecoilRoot` відображався десь у батьківському дереві. Гарне місце для розміщення цього - у вашому кореневому компоненті:
+
+```jsx
+import React from 'react';
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
+
+function App() {
+  return (
+    <RecoilRoot>
+      <CharacterCounter />
+    </RecoilRoot>
+  );
+}
+```
+
+Ми реалізуємо компонент `CharacterCounter` у наступному розділі.
+
+## Атом
+
+**Атом** являє собою частину **стану**. Атоми можуть бути зчитані з будь-якого компонента і записані в нього. Компоненти, що зчитують значення атома, неявно підписані на цей атом, тому будь-які оновлення атома призведуть до повторного відображення всіх компонентів, **підписаних** на цей атом:
+
+```javascript
+const textState = atom({
+  key: 'textState', // унікальний ідентифікатор (стосовно інших атомів / селекторів)
+  default: '', // значення за замовчуванням (воно ж початкове значення)
+});
+```
+
+Компоненти, яким потрібно читати з атома і писати в нього, повинні використовувати функцію `useRecoilState ()`, як показано нижче:
+
+```jsx
+function CharacterCounter() {
+  return (
+    <div>
+      <TextInput />
+      <CharacterCount />
+    </div>
+  );
+}
+
+function TextInput() {
+  const [text, setText] = useRecoilState(textState);
+
+  const onChange = (event) => {
+    setText(event.target.value);
+  };
+
+  return (
+    <div>
+      <input type="text" value={text} onChange={onChange} />
+      <br />
+      Луна: {text}
+    </div>
+  );
+}
+```
+
+## Селектор
+
+Un **sélecteur** représente un morceau d'**état dérivé**. L'état dérivé est une **transformation** d'état. Vous pouvez considérer l'état dérivé comme la sortie de l'état passant à une fonction pure qui modifie l'état donné d'une manière ou d'une autre:
+
+**Селектор** являє собою фрагмент **похідного стану**. Похідний стан - це **перетворення** стану. Ви можете думати про похідний стан як про виведення перехідного стану в чисту функцію, яка якимось чином змінює даний стан:
+
+```jsx
+const charCountState = selector({
+  key: 'charCountState', // унікальний ідентифікатор (стосовно інших атомів / селекторів)
+  get: ({get}) => {
+    const text = get(textState);
+
+    return text.length;
+  },
+});
+```
+
+Nous pouvons utiliser le _hook_ `useRecoilValue()` pour lire la valeur de `charCountState`:
+Ми можемо використовувати _hook_ `useRecoilValue()` для зчитування значення стану `charCountState`:
+
+```jsx
+function CharacterCount() {
+  const count = useRecoilValue(charCountState);
+
+  return <>Кількість символів: {count}</>;
+}
+```
+
+## Демонстрація
+
+Нижче наведено готовий продукт::
+
+import GettingStarted from '../../../../../src/components/introduction/GettingStarted';
+
+<GettingStarted />
