@@ -40,7 +40,7 @@ module.exports = {
       ? // Staging locales: https://docusaurus-i18n-staging.netlify.app/
         ['en', 'fr']
       : // Production locales
-        ['en', 'fr', 'ko', 'zh-hans'],
+        ['en', 'fr', 'ko', 'zh-hans', 'uk'],
     localeConfigs: {
       en: {
         label: 'English',
@@ -53,6 +53,9 @@ module.exports = {
       },
       "zh-hans": {
         label: '简体中文',
+      },
+      "uk": {
+        label: 'Українська',
       },
     },
   },
