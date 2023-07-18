@@ -3,9 +3,9 @@ title: useResetRecoilState(state)
 sidebar_label: useResetRecoilState()
 ---
 
-Returns a function that will reset the value of the given state to its default value.
+Повертає функцію, яка скине значення даного стану до значення за замовчуванням.
 
-Using `useResetRecoilState()` allows a component to reset the state to its default value without subscribing the component to re-render whenever the state changes.
+Використання `useResetRecoilState()` дозволяє компоненту скинути стан до значення за замовчуванням без підписки компонента на повторне відтворення щоразу, коли стан змінюється.
 
 ---
 
@@ -13,9 +13,9 @@ Using `useResetRecoilState()` allows a component to reset the state to its defau
 function useResetRecoilState<T>(state: RecoilState<T>): () => void;
 ```
 
-- `state`: a writeable Recoil state
+- `state`: Recoil-стан, до якого можна записувати значення
 
-### Example
+### Приклад
 
 ```jsx
 import {todoListState} from "../atoms/todoListState";

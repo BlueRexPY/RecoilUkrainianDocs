@@ -3,7 +3,7 @@ title: useRecoilStoreID()
 sidebar_label: useRecoilStoreID()
 ---
 
-Provides a `StoreID` associated with the currently active [`<RecoilRoot>`](/docs/api-reference/core/RecoilRoot).
+Надає `StoreID`, пов’язаний із наразі активним [`<RecoilRoot>`](/docs/api-reference/core/RecoilRoot).
 
 ---
 
@@ -11,6 +11,6 @@ Provides a `StoreID` associated with the currently active [`<RecoilRoot>`](/docs
 function useRecoilStoreID(): StoreID
 ```
 
-The `StoreID` is associated with the closest ancestor [`<RecoilRoot>`](/docs/api-reference/core/RecoilRoot) (which does not have the `override` prop set to `false` with another ancestor) or [`<RecoilBridge>`](/docs/api-reference/core/useRecoilBridgeAcrossReactRoots).
+`StoreID` пов’язано з найближчим предком [`<RecoilRoot>`](/docs/api-reference/core/RecoilRoot) (який не має параметра `override`, встановленого на `false` з іншим предком) або [ `<RecoilBridge>`](/docs/api-reference/core/useRecoilBridgeAcrossReactRoots).
 
-The type of `StoreID` is opaque.  The ID provided matches the `storeID` passed to atom effects that are associated with the same `<RecoilRoot>`.
+Тип `StoreID`є закритим (інкапсульованим). Наданий ідентифікатор співпадає з значенням `storeID`, переданим до ефектів атома, які пов’язані з тим самим `<RecoilRoot>`.

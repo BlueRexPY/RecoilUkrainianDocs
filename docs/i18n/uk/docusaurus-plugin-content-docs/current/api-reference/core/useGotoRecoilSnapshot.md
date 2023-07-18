@@ -3,19 +3,19 @@ title: useGotoRecoilSnapshot(snapshot)
 sidebar_label: useGotoRecoilSnapshot()
 ---
 
-This hook returns a callback which takes a [`Snapshot`](/docs/api-reference/core/Snapshot) as a parameter and will update the current [`<RecoilRoot>`](/docs/api-reference/core/RecoilRoot) state to match this atom state.
+Цей хук повертає колбек, який приймає [`Snapshot`](/docs/api-reference/core/Snapshot) як параметр іта оновить поточний стан [`<RecoilRoot>`](/docs/api-reference/core/RecoilRoot) для відповідності зі станом атома.
 
 ```jsx
 function useGotoRecoilSnapshot(): Snapshot => void
 ```
 
-### Transaction Example
+### Приклад транзакції
 
-**Important Note**: This example is not efficient because it will subscribe the component to re-render for *all* state changes.
+**Важлива зауваження**: Цей приклад не є ефективним, оскільки він підписує компонент на повторний рендерінг при усіх змінах стану.
 
 ```jsx
 function TransactionButton(): React.Node {
-  const snapshot = useRecoilSnapshot(); // Subscribe to all state changes
+  const snapshot = useRecoilSnapshot(); // Підписка на будь-які зміни стану
   const modifiedSnapshot = snapshot.map(({set}) => {
     set(atomA, x => x + 1);
     set(atomB, x => x * 2);
@@ -25,6 +25,9 @@ function TransactionButton(): React.Node {
 }
 ```
 
-### Time Travel Example
+### Подорож у часі
 
-See the [Time Travel Example](/docs/guides/dev-tools#time-travel)
+Дивіться приклад використання інструментів розробника для [подорожі у часі](/docs/guides/dev-tools#time-travel).
+
+
+
